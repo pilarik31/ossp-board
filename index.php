@@ -36,7 +36,6 @@ require_once "rozvrhy.php";
                     href="detail-rozvrh.php?class=total">
                         Celkový rozvrh
                     </a>-->
-                    <img src="img/Flag_of_Ukraine.webp" alt="ukrajinská vlajka" width="200" class="pig">
 
                     <?php
                     $counter = 0;
