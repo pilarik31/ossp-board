@@ -1,0 +1,11 @@
+.header-absolute {
+    z-index: 20; top: 15%
+}
+
+.carcousel-w100-h100 {
+    width: 100vw; height: 100vh
+}
+
+.darkImg {
+    filter: brightness(0.5);
+}

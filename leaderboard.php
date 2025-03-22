@@ -24,18 +24,13 @@ if ($leaderboard == []) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Kiosk</title>
-    <style>
-        .darkImg {
-            filter: brightness(0.5);
-        }
-    </style>
+
+    <link rel="stylesheet" href="css/leaderboard.css">
 </head>
 <body>
 <div class="container">
-    <h1 class="text-white fw-bold text-uppercase display-1 position-absolute start-50 translate-middle"
-        style="z-index: 20; top: 15%">Síň úspěchů</h1>
-    <div id="carouselLeaderboardCaptions" class="carousel slide position-absolute top-0 start-0" data-bs-ride="carousel"
-         style="width: 100vw; height: 100vh">
+    <h1 class="text-white header-absolute fw-bold text-uppercase display-1 position-absolute start-50 translate-middle">Síň úspěchů</h1>
+    <div id="carouselLeaderboardCaptions" class="carousel carcousel-w100-h100 slide position-absolute top-0 start-0" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <?php foreach ($leaderboard as $i => $v) { ?>
                 <button type="button" data-bs-target="#carouselLeaderboardCaptions" data-bs-slide-to="<?= $i ?>"
@@ -84,7 +79,6 @@ if ($leaderboard == []) {
         <span class="visually-hidden">Další</span>
     </button>
 </div>
-<!--    <a href="index.php" class="home-button btn btn-lg btn-primary position-absolute translate-middle" style="top: 90%; left: 90%; z-index: 1">Nástěnka</a>-->
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
@@ -94,12 +88,8 @@ if ($leaderboard == []) {
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
-<script>
-    $(document).ready(function () {
-        $(".goBack").click(function () {
-            window.location.href = "index.php";
-        });
-    });
+<script src="js/leaderboard.js">
+
 </script>
 </body>
 </html>

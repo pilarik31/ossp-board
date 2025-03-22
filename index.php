@@ -82,28 +82,15 @@ require_once "rozvrhy.php";
     </div>
 </div>
 <div id="easter-egg" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 2px solid black; z-index: 1000;">
-    <h1>Congratulations! You found the easter egg!</h1>
+    <h1 class="text-center">Ahoj, našel jsi easter egg od Matouše, dneska budeš mít štěstí</h1>
+    <h4 class="text-center">Matouš Drábek, 3.C 2024</h4>
+    <p class="text-center">Dej mi vedět jestli tohle najdeš (pokud tady ještě budu :D)</p>
+    <pre class="text-center"> IG: @whos.matous</pre>
     <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
         <div class="progress-bar" style="width: 0%"></div>
     </div>
 </div>
-<script>
-    document.getElementById('time-now').addEventListener('click', function() {
-        document.getElementById('easter-egg').style.display = 'block';
-        const progressBar = document.querySelector('#easter-egg .progress-bar');
-        let width = 0;
-        const interval = setInterval(function() {
-            if (width >= 100) {
-                clearInterval(interval);
-                document.getElementById('easter-egg').style.display = 'none';
-            } else {
-                width++;
-                progressBar.style.width = width + '%';
-                progressBar.setAttribute('aria-valuenow', width);
-            }
-        }, 30);
-    });
-</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
 <script src="js/gotoLb.js"></script>

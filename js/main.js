@@ -76,3 +76,19 @@ function nowIs() {
 startDate();
 startTime();
 nowIs()
+
+document.getElementById('time-now').addEventListener('click', function() {
+    document.getElementById('easter-egg').style.display = 'block';
+    const progressBar = document.querySelector('#easter-egg .progress-bar');
+    let width = 0;
+    const interval = setInterval(function() {
+        if (width >= 100) {
+            clearInterval(interval);
+            document.getElementById('easter-egg').style.display = 'none';
+        } else {
+            width++;
+            progressBar.style.width = width + '%';
+            progressBar.setAttribute('aria-valuenow', width);
+        }
+    }, 70);
+});

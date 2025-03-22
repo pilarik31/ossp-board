@@ -14,7 +14,7 @@ if (isset($_SESSION['admin']) && $_SESSION['admin']) {
 </head>
 <body>
 <div class="container vh-100 d-flex justify-content-center align-items-center">
-    <div class="card shadow p-4" style="width: 400px;">
+    <div class="card shadow p-4 card-400">
         <h3 class="text-center mb-4">Síň úspěchů</h3>
         <form id="loginForm" novalidate method="post" action="auth.php" name="loginForm">
             <div class="mb-3">

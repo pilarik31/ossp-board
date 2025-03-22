@@ -16,18 +16,7 @@ $leaderboard = json_decode($jsonFile, true);
     <title>Kiosk</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        #btn-back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-        }
-
-        .darkImg {
-            filter: brightness(0.5);
-        }
-    </style>
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
 <!--scroll up button-->
@@ -166,14 +155,13 @@ $leaderboard = json_decode($jsonFile, true);
 
 
 <div class="modal fade" id="livePreviewModal" tabindex="-1" aria-labelledby="livePreviewModal" aria-hidden="true">
-    <div class="modal-dialog modal-xl"
-         style="width: 80vw; max-width: none; height: 80vh; display: flex; align-items: center;">
-        <div class="modal-content" style="width: 100%; height: 100%;">
+    <div class="modal-dialog modal-xl custom-modal-dialog">
+        <div class="modal-content custom-modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5">Živý náhled</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zavřít"></button>
             </div>
-            <div class="modal-body p-0" style="height: calc(100% - 56px);">
+            <div class="modal-body custom-modal-body p-0">
                 <div id="carouselLivePreview" class="carousel slide h-100" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselLivePreview" data-bs-slide-to="0" class="active"
