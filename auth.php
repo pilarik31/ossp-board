@@ -6,13 +6,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (password_verify($pass, password_hash('admin', PASSWORD_DEFAULT))) {
         $_SESSION['admin'] = true;
-        header('Location: /admin.php');
+        header('Location: /kiosk/admin.php');
         exit();
     } else {
-        header('Location: /login.php?error=1');
+        header('Location: /kiosk/login.php?error=1');
         exit();
     }
 } else {
-    header('Location: /login.php');
+    header('Location: /kiosk/login.php');
     exit();
 }
