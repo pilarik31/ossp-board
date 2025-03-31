@@ -1,0 +1,22 @@
+.custom-modal-dialog {
+    width: 80vw; max-width: none; height: 80vh; display: flex; align-items: center;
+}
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
+
+.darkImg {
+    filter: brightness(0.5);
+}
+
+.custom-modal-content {
+    width: 100%; height: 100%;
+}
+
+.custom-modal-body {
+    height: calc(100% - 56px);
+}

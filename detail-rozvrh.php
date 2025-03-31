@@ -8,38 +8,69 @@ $class = filter_input(INPUT_GET, "class");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-    crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Timetable</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .responsive-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .home-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10; /* Ensure it stays on top of the iframe */
+            font-weight: bold;
+            padding: 15px 30px;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .home-button:hover {
+            background-color: #c0392b;
+        }
+    </style>
 </head>
 <body>
-    <div class="container-iframe">
+<div class="iframe-container">
     <?php
     if ($class === 'total') {
         ?>
         <iframe src="https://ossp.bakalari.cz/Timetable/Public" class="responsive-iframe"></iframe>
+
         <?php
     } else {
         ?>
         <iframe src="<?= $rozvrhy[$class] ?>" class="responsive-iframe"></iframe>
+
         <?php
     }
     ?>
-    </div>
-
     <a href="index.php" class="home-button btn btn-lg btn-danger">Nástěnka</a>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" 
-    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+
 </body>
 </html>

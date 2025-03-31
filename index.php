@@ -3,94 +3,96 @@ require_once "rozvrhy.php";
 ?>
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
     <title>Kiosk</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
     <style>
-        .pig {
-            position: absolute;
-            left: 80%;
-            bottom: 100px;
+        body {
+            background-color: #f8f9fa;
+            font-size: 28px;
+            touch-action: manipulation;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 1800px;
+            width: 100%;
+        }
+        .time, .date {
+            font-size: 42px;
+            font-weight: bold;
+            padding: 15px;
+            border-radius: 10px;
+            background: white;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        .btn-medium {
+            font-size: 32px;
+            padding: 20px;
+            width: 100%;
+            height: 90px;
         }
     </style>
 </head>
-
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- <div class="col-5"> -->
-            <!-- <img src="" alt="banner" class="img-fluid"> -->
-            <!-- </div> -->
-            <div class="col-12 text-center">
-                <div class="row">
-                    <div class="col-12">
-                        <h1 class="my-5">Nástěnka školy</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <!--<a class="btn btn-primary font-weight-bold px-5 py-4"
-                    href="detail-rozvrh.php?class=total">
-                        Celkový rozvrh
-                    </a>-->
 
-                    <?php
-                    $counter = 0;
-                    $color = 'btn-success';
-                    foreach ($rozvrhy as $rozvrh => $key) {
-                    ?>
-                        <div class="col-6 col-md-2 mb-5 text-center">
-                            <a class="btn btn-success btn-lg font-weight-bold px-5 py-4 <?= $color ?>" href="detail-rozvrh.php?class=<?= $rozvrh ?>">
-                                <?= $rozvrh ?>
-                            </a>
-                        </div>
-                    <?php
-                        $counter++;
-                        ($counter == 6) ? $color = 'btn-info' : null;
-                        ($counter == 12) ? $color = 'btn-warning' : null;
-                        ($counter == 18) ? $color = 'btn-danger' : null;
-                    }
-                    ?>
-                </div>
-                <div class="row">
-                    <?php
-                    foreach ($buttons as $button => $key) { ?>
-                        <div class="col-6 col-md-2 mb-5 text-center">
-                            <a class="btn btn-secondary btn-lg font-weight-bold px-5 py-4" href="detail-obecny.php?button=<?= $button ?>">
-                                <?= $button ?>
-                            </a>
-                        </div>
-                    <?php }
-                    ?>
-                    <?php /*<div class="col-6 col-md-2 mb-5 text-center">
-                        <a class="btn btn-secondary btn-lg font-weight-bold px-5 py-4" 
-                        href="detail-projekt.php">
-                            Rozpis projektů
-                        </a>
-                    </div>*/
-                    ?>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="text-center time"><span id="time-now"></span></h1>
-                    </div>
+<div class="container text-center">
+    <h1 class="my-3 fw-bold display-3">Nástěnka školy</h1>
 
-                </div>
-            </div>
+    <div class="mb-3">
+        <h1 class="date shadow-sm"><span id="date-now">---</span></h1>
+        <h1 class="time shadow-sm"><span id="time-now">---</span></h1>
+        <h1 class="time shadow-sm"><span id="now-is">---</span></h1>
+        <h1 class="time shadow-sm">Svátek: <span id="name-day">---</span></h1>
+    </div>
+
+    <div class="row justify-content-center">
+        <?php
+        $counter = 0;
+        $colors = ['btn-success', 'btn-primary', 'btn-warning', 'btn-danger'];
+
+        foreach ($rozvrhy as $rozvrh => $key) {
+            $color = $colors[intdiv($counter, 6) % count($colors)];
+            echo '<div class="col-4 col-md-3 col-lg-2 mb-3">';
+            echo '<a class="btn ' . $color . ' btn-medium fw-bold shadow" href="detail-rozvrh.php?class=' . $rozvrh . '">' . $rozvrh . '</a>';
+            echo '</div>';
+            $counter++;
+        }
+        ?>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <?php
+        foreach ($buttons as $button => $key) {
+            echo '<div class="col-4 col-md-3 col-lg-2 mb-3">';
+            echo '<a class="btn btn-secondary btn-medium fw-bold shadow" href="detail-obecny.php?button=' . $button . '">' . $button . '</a>';
+            echo '</div>';
+        }
+        ?>
+        <div class="col-4 col-md-3 col-lg-2 mb-3">
+            <a class="btn btn-secondary btn-medium fw-bold shadow" href="/leaderboard.php">Síň úspěchů</a>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
-    <script>
-        /*document.querySelector(".pig").addEventListener('click', function() {
-            alert('Chro chro, běž se učit!');
-        });*/
-    </script>
-</body>
+</div>
+<div id="easter-egg" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 2px solid black; z-index: 1000;">
+    <h1 class="text-center">Ahoj, našel jsi easter egg od Matouše, dneska budeš mít štěstí</h1>
+    <h4 class="text-center">Matouš Drábek, 3.C 2024</h4>
+    <p class="text-center">Dej mi vedět jestli tohle najdeš (pokud tady ještě budu :D)</p>
+    <pre class="text-center"> IG: @whos.matous</pre>
+    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width: 0%"></div>
+    </div>
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/gotoLb.js"></script>
+</body>
 </html>
