@@ -77,7 +77,7 @@ require_once "rozvrhy.php";
         }
         ?>
         <div class="col-4 col-md-3 col-lg-2 mb-3">
-            <a class="btn btn-secondary btn-medium fw-bold shadow" href="/leaderboard.php">Síň úspěchů</a>
+            <a class="btn btn-secondary btn-medium fw-bold shadow" href="leaderboard.php">Síň úspěchů</a>
         </div>
     </div>
 </div>

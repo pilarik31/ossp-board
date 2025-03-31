@@ -30,13 +30,13 @@ $leaderboard = json_decode($jsonFile, true);
 
 <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <a href="/kiosk" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
             <span class="fs-4">Kiosek - Síň úspěchů</span>
         </a>
 
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="/leaderboard.php" target="_blank" class="nav-link">Náhled</a></li>
-            <li class="nav-item"><a href="/logout.php" class="nav-link">Odhlásit se</a></li>
+            <li class="nav-item"><a href="/kiosk/leaderboard.php" target="_blank" class="nav-link">Náhled</a></li>
+            <li class="nav-item"><a href="kiosk//logout.php" class="nav-link">Odhlásit se</a></li>
         </ul>
     </header>
 </div>

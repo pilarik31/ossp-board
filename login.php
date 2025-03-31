@@ -30,7 +30,7 @@ if (isset($_SESSION['admin']) && $_SESSION['admin']) {
                 <button id="loginFormButton" class="btn btn-primary">Přihlásit se</button>
             </div>
         </form>
-        <a href="/" class="btn btn-link text-start pt-3"> &#8592; Zpět</a>
+        <a href="/kiosk" class="btn btn-link text-start pt-3"> &#8592; Zpět</a>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
