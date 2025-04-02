@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!$_SESSION['admin']) {
-    header("Location: login.php");
+    header("Location: /kiosk/login.php");
     exit();
 }
 
@@ -36,7 +36,7 @@ $leaderboard = json_decode($jsonFile, true);
 
         <ul class="nav nav-pills">
             <li class="nav-item"><a href="/kiosk/leaderboard.php" target="_blank" class="nav-link">Náhled</a></li>
-            <li class="nav-item"><a href="kiosk//logout.php" class="nav-link">Odhlásit se</a></li>
+            <li class="nav-item"><a href="kiosk/logout.php" class="nav-link">Odhlásit se</a></li>
         </ul>
     </header>
 </div>
