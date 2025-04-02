@@ -36,7 +36,7 @@ $leaderboard = json_decode($jsonFile, true);
 
         <ul class="nav nav-pills">
             <li class="nav-item"><a href="/kiosk/leaderboard.php" target="_blank" class="nav-link">Náhled</a></li>
-            <li class="nav-item"><a href="kiosk/logout.php" class="nav-link">Odhlásit se</a></li>
+            <li class="nav-item"><a href="logout.php" class="nav-link">Odhlásit se</a></li>
         </ul>
     </header>
 </div>
