@@ -56,9 +56,9 @@ if ($leaderboard == []) {
                             </div>
 
                             <div class="col-md-9 text-start">
-                                <h1 class="fw-bold display-2 mt-3"><strong><?= $v["header"] ?></strong></h1>
-                                <h4 class="display-4 fw-semibold"><?= $v["name"] ?> <span
-                                            class="fw-light"><?= $v['classroom'] ?></span></h4>
+                                <h1 class="display-2 fw-semibold"><?= $v["name"] ?> <span
+                                            class="fw-light"><?= $v['classroom'] ?></span></h1>
+                                <h4 class="display-5 fw-semibold mt-3"><?= $v["header"] ?></h4>
                                 <h5 class="text-white"><?= $v["subtitle"] ?></h5>
                             </div>
                         </div>
