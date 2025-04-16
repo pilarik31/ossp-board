@@ -189,11 +189,9 @@ $leaderboard = json_decode($jsonFile, true);
                                                  class="img-fluid rounded rounded-4">
                                         </div>
                                         <div class="col-md-9 text-start">
-                                            <h1 id="preview-title" class="fw-bold display-2 mt-3">
-                                                <strong>Nadpis</strong></h1>
-                                            <h4 class="display-4 fw-semibold"><span id="preview-name">Jméno</span> <span
-                                                        id="preview-classroom" class="fw-light">Třída</span>
-                                            </h4>
+                                            <h1 class="display-2 fw-semibold" id="preview-name">Jméno <span
+                                                        class="fw-light" id="preview-classroom">Třída</span></h1>
+                                            <h4 id="preview-title" class="display-5 fw-semibold mt-3">Nadpis</h4>
                                             <h5 id="preview-subtitle" class="text-white">Podnadpis</h5>
                                         </div>
                                     </div>
